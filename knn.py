@@ -94,8 +94,6 @@ def find_tag():
 # ------------------------ Knn Bölümü ------------------------
 
 excel_path = 'iris.xlsx'
-# Bu veri setinde her satırın sonunda etiketi bulunur.
-
 sheet_index = 0
 
 k = 3
@@ -110,5 +108,3 @@ tags = find_tag()
 write_excel("training", training)
 write_excel("test", test)
 write_excel("result", test, tags)
-
-print("Çıktılar excel formatında")
