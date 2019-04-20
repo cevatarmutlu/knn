@@ -1,6 +1,5 @@
 # Knn
 Sadece iris.xlsx ile denenmiştir.
-Sınıflandırmayı ne kadar doğru yaptığına dair oranı vermemektedir.
 Training, Test ve Result adında excel formatında çıktılar vermektedir.
 
 iris veri setinin 5 satırından 4 tanesini Training dizisine, 1 tanesini Test dizisine atmaktadır. 
