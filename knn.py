@@ -91,7 +91,18 @@ def find_tag():
     return tags
 
 
+def error_percentage():
+    error_tag = 0
+    for i in range(len(test)):
+        print(dataset.row_values(test[i])[tag_index], tags[i])
+        test_tag = dataset.row_values(test[i])[tag_index]
+        tag = tags[i]
+        if test_tag != tag:
+            error_tag += 1
+    print(error_tag / len(test) * 100)
+
 # ------------------------ Knn Bölümü ------------------------
+
 
 excel_path = 'iris.xlsx'
 sheet_index = 0
@@ -100,6 +111,7 @@ k = 3
 # k = int(input('k değerini giriniz'))
 
 dataset = open_excel(excel_path, sheet_index)
+
 tag_index = dataset.ncols - 1  # Etiketin hangi indiste bulunduğunu belirtiyoruz
 
 training, test = config_sets(dataset)
@@ -108,3 +120,8 @@ tags = find_tag()
 write_excel("training", training)
 write_excel("test", test)
 write_excel("result", test, tags)
+
+error_percentage()
+
+
+
