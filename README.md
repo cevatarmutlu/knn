@@ -9,3 +9,8 @@ iris veriseti iki diziye bölünmektedir. Bu iki diziye verilerin kendileri değ
 
 
 Eksik gördüğünüz veya yanlış bulduğunuz kısımları bana iletebilirsiniz: cevatarmutlu@gmail.com
+
+# Kurulum
+```
+pip3 install -r requirements
+```
