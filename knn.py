@@ -101,27 +101,27 @@ def error_percentage():
             error_tag += 1
     print(error_tag / len(test) * 100)
 
-# ------------------------ Knn Bölümü ------------------------
 
+if __name__ == "__main__":
+    
+    excel_path = 'iris.xlsx'
+    sheet_index = 0
 
-excel_path = 'iris.xlsx'
-sheet_index = 0
+    k = 3
+    # k = int(input('k değerini giriniz'))
 
-k = 3
-# k = int(input('k değerini giriniz'))
+    dataset = open_excel(excel_path, sheet_index)
 
-dataset = open_excel(excel_path, sheet_index)
+    tag_index = dataset.ncols - 1  # Etiketin hangi indiste bulunduğunu belirtiyoruz
 
-tag_index = dataset.ncols - 1  # Etiketin hangi indiste bulunduğunu belirtiyoruz
+    training, test = config_sets(dataset)
+    tags = find_tag()
 
-training, test = config_sets(dataset)
-tags = find_tag()
+    write_excel("training", training)
+    write_excel("test", test)
+    write_excel("result", test, tags)
 
-write_excel("training", training)
-write_excel("test", test)
-write_excel("result", test, tags)
-
-error_percentage()
+    error_percentage()
 
 
 
